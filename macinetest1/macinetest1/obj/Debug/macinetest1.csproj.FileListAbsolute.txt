@@ -1,0 +1,7 @@
+C:\Users\user\source\repos\macinetest1\macinetest1\bin\Debug\macinetest1.exe.config
+C:\Users\user\source\repos\macinetest1\macinetest1\bin\Debug\macinetest1.exe
+C:\Users\user\source\repos\macinetest1\macinetest1\bin\Debug\macinetest1.pdb
+C:\Users\user\source\repos\macinetest1\macinetest1\obj\Debug\macinetest1.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\macinetest1\macinetest1\obj\Debug\macinetest1.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\macinetest1\macinetest1\obj\Debug\macinetest1.exe
+C:\Users\user\source\repos\macinetest1\macinetest1\obj\Debug\macinetest1.pdb
