@@ -82,10 +82,19 @@ namespace clinicalproject
                 SqlCommand updatecmd = new SqlCommand(updateqry, con);
                 updatecmd.ExecuteNonQuery();
                 Console.WriteLine("----Token Reseted----");
+                menu();
 
             }
-            
-            menu();
+            else if (ch == "n")
+            {
+                menu();
+            }
+
+            else
+            {
+                Console.WriteLine("enter valid ip");
+                resetToken();
+            }
         }
         public static void todaypatient()
         {
@@ -172,20 +181,20 @@ namespace clinicalproject
             SqlConnection con = new SqlConnection(cs);
             con.Open();
             Console.WriteLine("--------patient registration---------\n");
-            Console.WriteLine("enter first name:");
-            string fname = Console.ReadLine();
-            Console.WriteLine("enter last name:");
-            string lname = Console.ReadLine();
-            Console.WriteLine("enter date of birth:");
-            string dob = Console.ReadLine();
-            Console.WriteLine("enter address:");
-            string address = Console.ReadLine();
-            Console.WriteLine("enter phone no:");
-            string phn = Console.ReadLine();
-            Console.WriteLine("enter gender:");
-            string gender = Console.ReadLine();
-            Console.WriteLine("enter blood group:");
-            string bld = Console.ReadLine();
+            
+            string fname = validation.firstname("first");
+            
+            string lname = validation.lastname("last");
+            
+            string dob = validation.ValBirth();
+            
+            string address = validation.address();
+            
+            string phn = validation.Valph();
+            
+            string gender = validation.gend();
+            
+            string bld = validation.blood();
             string status = "active";
             string insertqry = $"insert into patient(fname,lname,dob,phone,address,gender,bloodgrp,status1)values('{fname}','{lname}','{dob}','{phn}','{address}','{gender}','{bld}','{status}')";
             SqlCommand insertcmd = new SqlCommand(insertqry, con);
@@ -226,13 +235,34 @@ namespace clinicalproject
             DateTime today = DateTime.Today;
             string date = today.ToString();
             Console.WriteLine("Appointment date:" + today);
+            
             Console.WriteLine("Select department");
             department();
+            departmentlabel:
             Console.WriteLine("Enter department Id");
             int dept = Convert.ToInt32(Console.ReadLine());
+            
             doctorlist(dept);
+            doctorlabel:
             Console.WriteLine("Select Doctor:");
             int doct = Convert.ToInt32(Console.ReadLine());
+            if (dept == 1)
+            {
+                if ((doct !=3)|| (dept !=4)|| (dept !=5))
+                {
+                    Console.WriteLine("Enter correct Doctor Id");
+                    goto doctorlabel;
+                }
+            }
+            else if (dept == 2)
+            {
+                if (dept !=1|| dept !=2)
+                {
+                    Console.WriteLine("Enter correct Doctor Id");
+                    goto doctorlabel;
+                }
+            }
+            
             int fee=consultfee(doct);
             string status = "active";
             int token1 = token(doct);
@@ -247,12 +277,12 @@ namespace clinicalproject
             Console.WriteLine("Token:" + token1);
             Console.WriteLine("Consultation fee=" + fee);
             Console.WriteLine("-----Total amount:" + (fee + 200));
-            Console.WriteLine("press 0 to go dashboard");
+            Console.WriteLine("press any key to go dashboard");
             string ch = Console.ReadLine();
-            if (ch == "0")
-            {
-                menu();
-            }
+            
+            menu();
+            
+
 
 
         }

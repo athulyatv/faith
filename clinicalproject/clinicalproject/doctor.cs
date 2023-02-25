@@ -140,7 +140,7 @@ namespace clinicalproject
         }
         public static void nextPtient()
         {
-            Console.WriteLine("\n--------Next Patient--------\n");
+            Console.WriteLine("\n--------Consulting Patient--------\n");
             string cs = "Data Source=DESKTOP-8OGPQNH;Initial catalog=project;User Id=sa;Password=athulya";
             SqlConnection con = new SqlConnection(cs);
             con.Open();
