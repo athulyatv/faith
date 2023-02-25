@@ -1,0 +1,10 @@
+C:\Users\user\source\repos\clinicalproject\clinicalproject\bin\Debug\clinicalproject.exe.config
+C:\Users\user\source\repos\clinicalproject\clinicalproject\bin\Debug\clinicalproject.exe
+C:\Users\user\source\repos\clinicalproject\clinicalproject\bin\Debug\clinicalproject.pdb
+C:\Users\user\source\repos\clinicalproject\clinicalproject\bin\Debug\System.Data.SqlClient.dll
+C:\Users\user\source\repos\clinicalproject\clinicalproject\bin\Debug\System.Data.SqlClient.xml
+C:\Users\user\source\repos\clinicalproject\clinicalproject\obj\Debug\clinicalproject.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\clinicalproject\clinicalproject\obj\Debug\clinicalproject.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\clinicalproject\clinicalproject\obj\Debug\clinicalproject.csproj.CopyComplete
+C:\Users\user\source\repos\clinicalproject\clinicalproject\obj\Debug\clinicalproject.exe
+C:\Users\user\source\repos\clinicalproject\clinicalproject\obj\Debug\clinicalproject.pdb
