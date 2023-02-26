@@ -97,7 +97,17 @@ namespace clinicalproject
             }
             if (flag == 1)
             {
-                nextPtient();
+                Console.WriteLine("Do you want to continue or go back(y/n)?????");
+                string ch1 = Console.ReadLine();
+                if (ch1 == "y")
+                {
+                    nextPtient();
+                }
+                else
+                {
+                    docmenu();
+                }
+                
             }
             else
             {

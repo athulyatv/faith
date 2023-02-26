@@ -246,22 +246,7 @@ namespace clinicalproject
             doctorlabel:
             Console.WriteLine("Select Doctor:");
             int doct = Convert.ToInt32(Console.ReadLine());
-            if (dept == 1)
-            {
-                if ((doct !=3)|| (dept !=4)|| (dept !=5))
-                {
-                    Console.WriteLine("Enter correct Doctor Id");
-                    goto doctorlabel;
-                }
-            }
-            else if (dept == 2)
-            {
-                if (dept !=1|| dept !=2)
-                {
-                    Console.WriteLine("Enter correct Doctor Id");
-                    goto doctorlabel;
-                }
-            }
+            
             
             int fee=consultfee(doct);
             string status = "active";
@@ -402,12 +387,12 @@ namespace clinicalproject
         }
         public static void searchByReg()
         {
-            Console.WriteLine("Enter Registor Number");
-            string regno = Console.ReadLine();
+            
+            string regno = validation.pid();
             string cs = "Data Source=DESKTOP-8OGPQNH;Initial catalog=project;User Id=sa;Password=athulya";
             SqlConnection con = new SqlConnection(cs);
             con.Open();
-            string regid = $"select * from patient where patientid={regno}";
+            string regid = $"select * from patient where patientid='{regno}'";
             SqlCommand display = new SqlCommand(regid, con);
             SqlDataReader reader = display.ExecuteReader();
             int f = 0;
@@ -436,7 +421,7 @@ namespace clinicalproject
         public static void searchByPhone()
         {
             Console.WriteLine("Enter Phone Number");
-            string phone = Console.ReadLine();
+            string phone = validation.Valph();
             string cs = "Data Source=DESKTOP-8OGPQNH;Initial catalog=project;User Id=sa;Password=athulya";
             SqlConnection con = new SqlConnection(cs);
             con.Open();
@@ -452,6 +437,7 @@ namespace clinicalproject
                 Console.WriteLine("Phone No:" + reader.GetValue(4).ToString());
                 Console.WriteLine("Blood Group:" + reader.GetValue(7).ToString());
                 Console.WriteLine("Gender:" + reader.GetValue(6).ToString());
+                Console.WriteLine("");
                 f = 1;
                 //subMenu();
             }

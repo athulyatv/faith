@@ -13,7 +13,7 @@ namespace clinicalproject
         public static string firstname(string f1)
         {
         name:
-            Console.Write($"\n\tEnter Your {f1} Name: ");
+            Console.Write($"\nEnter Your {f1} Name: ");
             String name = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -40,7 +40,7 @@ namespace clinicalproject
         public static string lastname(string f1)
         {
         name:
-            Console.Write($"\n\tEnter Your {f1} Name: ");
+            Console.Write($"\nEnter Your {f1} Name: ");
             String name = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -115,7 +115,7 @@ namespace clinicalproject
         public static string gend()
         {
         gend:
-            Console.Write("\n\tEnter the Gender: ");
+            Console.Write("\nEnter the Gender: ");
             string G = Console.ReadLine().ToLower();
             if (string.IsNullOrWhiteSpace(G))
             {
@@ -133,11 +133,32 @@ namespace clinicalproject
 
             return G;
         }
+        public static string pid()
+        {
+        pid:
+            Console.Write("\nEnter Registor Number: ");
+            string G = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(G))
+            {
+                Console.WriteLine("\n *** Search cannot be empty or whitespace. Enter something");
+                goto pid;
+            }
+
+
+
+            if (!Regex.IsMatch(G, "^[0-9]$"))
+            {
+                Console.WriteLine("\n *** Enter only numbers");
+                goto pid;
+            }
+
+            return G;
+        }
 
         public static string blood()
         {
         blog:
-            Console.Write("\n\tEnter the Blood Group: ");
+            Console.Write("\nEnter the Blood Group: ");
             string BG = Console.ReadLine().ToUpper();
             if (string.IsNullOrWhiteSpace(BG))
             {
@@ -161,7 +182,7 @@ namespace clinicalproject
         public static string address()
         {
         ads1:
-            Console.Write("\n\tEnter the Address: ");
+            Console.Write("\nEnter the Address: ");
             string ads = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(ads))
             {
@@ -185,7 +206,7 @@ namespace clinicalproject
         public static string ValBirth()
         {
         doo:
-            Console.Write("\n\tEnter your DOB (dd/mm/yy): ");
+            Console.Write("\nEnter your DOB (dd/mm/yy): ");
             string dob = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(dob))
             {
@@ -226,7 +247,7 @@ namespace clinicalproject
         public static string Valph()
         {
         ph1:
-            Console.Write("\n\tEnter the Phone number:");
+            Console.Write("\nEnter the Phone number:");
             string ph = Console.ReadLine();
             if (string.IsNullOrEmpty(ph))
             {
